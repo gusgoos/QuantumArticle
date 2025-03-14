@@ -42,6 +42,7 @@ En este trabajo se presenta un panorama general de la mecánica cuántica supers
 La supersimetría en mecánica cuántica surge como una herramienta poderosa para la resolución de problemas espectrales, extendiendo el método de factorización propuesto por Schrödinger e Infeld-Hull. Este enfoque permite la obtención de nuevos potenciales a partir de un Hamiltoniano base sin alterar su espectro. Witten introdujo la supersimetría en mecánica cuántica en la década de 1980, estableciendo su relación con la teoría de campos cuánticos. Investigadores como Mielnik y Fernández han explorado la construcción de potenciales alternativos con la misma estructura espectral que el oscilador armónico.
 En términos generales, la mecánica cuántica supersimétrica proporciona un marco algebraico que permite transformar sistemas cuánticos conocidos en nuevos sistemas con las mismas propiedades espectrales pero con funciones de onda modificadas. Este método ha permitido la resolución exacta de numerosos problemas en mecánica cuántica y ha encontrado aplicaciones en áreas como la física de partículas, la óptica cuántica y la teoría de solitones.
 El objetivo central de este trabajo es analizar el formalismo de la mecánica cuántica supersimétrica, con énfasis en la factorización del Hamiltoniano y la construcción de superpotenciales. Se discutirán aplicaciones concretas del método, incluyendo la generación de potenciales isoespectrales y su relación con ecuaciones diferenciales no lineales. Además, se explorarán generalizaciones del método de Mielnik y su aplicación a sistemas periódicos y el oscilador armónico.
+
 \section{Marco Teórico}
 \subsection{Introducción a la mecánica cuántica supersimétrica}
 La Mecánica Cuántica Supersimétrica (SUSY QM) es una versión simplificada de la supersimetría (SUSY) aplicada al ámbito de la mecánica cuántica no relativista. En lugar de enfocarse en partículas elementales y campos cuánticos, como en la SUSY de altas energías, la SUSY QM se centra en potenciales y estados ligados de sistemas cuánticos sencillos, como el oscilador armónico o el pozo de potencial.
@@ -123,4 +124,48 @@ El nuevo potencial transformado se obtiene mediante:
 V_k(x) = V_0(x) - 2 \frac{d^2}{dx^2} \ln W(\psi_1, \psi_2, \dots, \psi_k)
 \end{equation}
 La cual cumple con el álgebra propuesto por Witten tiempo atrás.
+
+\section{Desarrollo teórico}
+En esta sección, profundizamos en el método de Darboux para la eliminación de estados del oscilador armónico, utilizando el formalismo de la mecánica cuántica supersimétrica y la factorización de Hamiltonianos. El objetivo es modificar el espectro del oscilador armónico, eliminando k estados consecutivos a partir del n-ésimo nivel.
+Teniendo en cuenta el Hamiltoniano del oscilador armónico cuántico:
+\begin{equation}
+H_0 = -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2} m \omega^2 x^2
+\end{equation}
+Para simplificar, utilizaremos unidades adimensionales donde \( \hbar = m = \omega = 1 \). Así, el Hamiltoniano se reduce a:
+\begin{equation}
+H_0 = -\frac{1}{2} \frac{d^2}{dx^2} + \frac{1}{2} x^2
+\end{equation}
+De esta forma, la solución de la función de onda para la ecuación Schrödinger, del oscilador armónico, puede ser descrita en términos de polinomios de Hermiteh de la siguiente manera:
+\begin{equation}
+\psi_n(x) = H_n(x) e^{-\frac{x^2}{2}}
+\end{equation}
+A partir del Hamiltoniano, se puede conocer el potencial base V0:
+\begin{equation}
+V_0=\frac{1}{2} x^2
+\end{equation}
+
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{QuantumHarmonicOscillator.jpeg} 
+\end{center}
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{QuantumHarmonicOscillator_2_3.jpeg} 
+\end{center}
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{QHO_Odd.jpeg} 
+\end{center}
+
+\section{Discusión}
+
+\section{Conclusiones}
+
+\nocite{*}
+\maketitle
+\section{Referencias}
+\bibliography{aipsamp}% Produces the bibliography via BibTeX.
+
+\section{Agradecimientos}
+
+\section{Apéndices}
+
 \end{document}
+
