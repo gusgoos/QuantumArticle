@@ -1,0 +1,126 @@
+\documentclass[%
+ aip,
+ jmp,%
+ amsmath,amssymb,
+ reprint,
+]{revtex4-2}
+
+\usepackage{graphicx}% Include figure files
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{amsmath, amssymb, amsthm}
+
+\begin{document}
+
+\preprint{AIP/123-QED}
+
+\title[Fundamentos de Supersimetría en Mecánica Cuántica y Factorización de Hamiltonianos]{Fundamentos de Supersimetría en Mecánica Cuántica\\ y Factorización de Hamiltonianos}
+
+\author{Aldehil de Jesús Sánchez Hernández}
+\altaffiliation[Also at ]{Ingeniería y Ciencias, ITESM}
+
+\author{Eduardo Francisco Lugo Quintana}%
+\altaffiliation[Also at ]{Ingeniería y Ciencias, ITESM}
+
+\author{Gustavo Tellez Mireles}
+\email{A01747114@tec.com}
+\altaffiliation[Also at ]{Ingeniería y Ciencias, ITESM}
+
+\author{Jorge Iván Rodríguez Reyes}
+\altaffiliation[Also at ]{Ingeniería y Ciencias, ITESM}
+
+\date{\today}
+
+\begin{abstract}
+En este trabajo se presenta un panorama general de la mecánica cuántica supersimétrica (SUSY QM) como una extensión de la mecánica cuántica convencional. Se abordan las motivaciones teóricas e históricas que dieron lugar a esta formulación y se introducen los operadores supersimétricos clave. Además, se analiza el método de factorización del Hamiltoniano y su aplicación en sistemas unidimensionales, destacando cómo, a partir de un sistema con soluciones conocidas (espectros y funciones de onda), es posible generar nuevos potenciales mediante transformaciones algebraicas. Finalmente, se discuten los principales resultados y aplicaciones de esta metodología, en particular su utilidad en el análisis espectral y la construcción de nuevos sistemas con propiedades espectrales controladas (isoespectrales).
+\end{abstract}
+
+\keywords{Supersimetría, Mecánica Cuántica, Factorización de Hamiltonianos, Superpotenciales, Potenciales periódicos, Sistemas unidimensionales.}
+
+\maketitle
+\section{Introducción}
+La supersimetría en mecánica cuántica surge como una herramienta poderosa para la resolución de problemas espectrales, extendiendo el método de factorización propuesto por Schrödinger e Infeld-Hull. Este enfoque permite la obtención de nuevos potenciales a partir de un Hamiltoniano base sin alterar su espectro. Witten introdujo la supersimetría en mecánica cuántica en la década de 1980, estableciendo su relación con la teoría de campos cuánticos. Investigadores como Mielnik y Fernández han explorado la construcción de potenciales alternativos con la misma estructura espectral que el oscilador armónico.
+En términos generales, la mecánica cuántica supersimétrica proporciona un marco algebraico que permite transformar sistemas cuánticos conocidos en nuevos sistemas con las mismas propiedades espectrales pero con funciones de onda modificadas. Este método ha permitido la resolución exacta de numerosos problemas en mecánica cuántica y ha encontrado aplicaciones en áreas como la física de partículas, la óptica cuántica y la teoría de solitones.
+El objetivo central de este trabajo es analizar el formalismo de la mecánica cuántica supersimétrica, con énfasis en la factorización del Hamiltoniano y la construcción de superpotenciales. Se discutirán aplicaciones concretas del método, incluyendo la generación de potenciales isoespectrales y su relación con ecuaciones diferenciales no lineales. Además, se explorarán generalizaciones del método de Mielnik y su aplicación a sistemas periódicos y el oscilador armónico.
+\section{Marco Teórico}
+\subsection{Introducción a la mecánica cuántica supersimétrica}
+La Mecánica Cuántica Supersimétrica (SUSY QM) es una versión simplificada de la supersimetría (SUSY) aplicada al ámbito de la mecánica cuántica no relativista. En lugar de enfocarse en partículas elementales y campos cuánticos, como en la SUSY de altas energías, la SUSY QM se centra en potenciales y estados ligados de sistemas cuánticos sencillos, como el oscilador armónico o el pozo de potencial.
+SUSY establece la existencia de una simetría que relaciona bosones (partículas de espín entero) y fermiones (partículas de espín semientero). En SUSY QM, esta simetría se manifiesta a través de operadores, llamados supercargas, que transforman estados bosónicos en fermiónicos y viceversa.
+\subsection{Definición Algebráica}
+Witten, junto con otros investigadores, desarrolló la mecánica cuántica supersimétrica como un "laboratorio" para explorar las ideas de la supersimetría en un contexto más simple. SUSY QM introduce operadores supercargas, $Q$ y $Q^{\dagger}$, que satisfacen un álgebra particular que involucra al Hamiltoniano $H$:
+\begin{equation}
+Q_1 = \frac{Q^+ + Q^-}{\sqrt{2}}, \quad
+Q_2 = \frac{Q^+ - Q^-}{i\sqrt{2}}, \quad
+\{Q, Q^{\dagger}\} = H, \quad Q^2 = (Q^{\dagger})^2 = 0.
+\end{equation}
+Estos operadores son matrices porque en el contexto de la mecánica cuántica supersimétrica, la supersimetría se representa como una simetría que mezcla dos sectores diferentes del sistema: el bosónico y el fermiónico. Estos sectores se modelan mediante una representación matricial, donde cada bloque representa la acción del operador en uno de los sectores.
+La razón por la cual se definen de esta manera es que, en el marco de la supersimetría, se quería que estos operadores conserven la estructura algebraica que permite la descomposición del Hamiltoniano supersimétrico.
+\begin{equation}
+Q^+ = \begin{pmatrix} 0 & B_k^+ \\ 0 & 0 \end{pmatrix}, \quad Q^- = \begin{pmatrix} 0 & 0 \\ B_k^- & 0 \end{pmatrix}.
+\end{equation}
+El Hamiltoniano supersimétrico toma la forma:
+\begin{equation}
+H_{ss} = \{Q^-, Q^+\} = \begin{pmatrix} B_k^+ B_k^- & 0 \\ 0 & B_k^- B_k^+ \end{pmatrix}.
+\end{equation}
+\subsection{Entrelazamiento operatorial y SUSY QM}
+El método de entrelazamiento operatorial, desarrollado posteriormente, proporciona una herramienta poderosa para construir sistemas supersimétricos. Este método se basa en la idea de entrelazar dos Hamiltonianos \( H_1 \) y \( H_2 \) a través de un operador \( A \):
+\begin{equation}
+H_1 = A H_0 A^{-1}
+\end{equation}
+En el contexto de SUSY QM, el operador de entrelazamiento A se relaciona directamente con los operadores supercargas Q y Q†. Específicamente, A puede construirse a partir de una combinación lineal de estos operadores. Esto permite generar pares de Hamiltonianos supersimétricos de manera sistemática, facilitando el estudio de sus propiedades y la exploración de la ruptura de la supersimetría.
+\subsection{Superpotencial y la ecuación de Riccati}
+El método de entrelazamiento operatorial está íntimamente ligado al concepto de superpotencial \( W(x) \) en SUSY QM. Este superpotencial es una función que determina completamente los Hamiltonianos \( H_1 \) y \( H_2 \) del sistema supersimétrico. 
+El superpotencial \( W(x) \) encapsula la información esencial que define la estructura del sistema supersimétrico, y a partir de él se construyen los Hamiltonianos \( H_0 \) y \( H_1 \).
+Dado un Hamiltoniano base unidimensional:
+\begin{equation}
+H_0 = -\frac{d^2}{dx^2} + V_0(x),
+\end{equation}
+Donde se tiene un H1 que esta anclado a lo que se proponga para H0 de la siguiente manera:
+\begin{equation}
+H_0 = -\frac{d^2}{dx^2} + V_0(x),
+h_1 = -\frac{d^2}{dx^2} + W^2(x) + W'(x)
+\end{equation}
+Esto debido a que tras la factorización del Hamiltoniano obtenemos la ecuación fundamental: 
+\begin{equation}
+V_0(x) = W^2(x) + W'(x).
+\end{equation}
+La cual es una ecuación de Riccatti, que en su forma general es: 
+\begin{equation}
+y'(x) + y^2(x) = f(x)
+\end{equation}
+Si identificamos
+\begin{equation}
+y(x) = W(x) y f(x) = V_0(x)
+\end{equation}
+, la ecuación de transformación del potencial se reescribe como
+\begin{equation}
+W'(x) + W^2(x) = V_0(x).
+\end{equation}
+En la mecánica cuántica supersimétrica estándar (SUSY QM de primer orden), se usa una única función semilla \( \psi_1(x) \) (que es una solución de la ecuación de Schrödinger para \( H_0 \)), y el nuevo potencial se obtiene a partir del superpotencial:
+\begin{equation}
+W(x) = \frac{\psi_0'(x)}{\psi_0(x)}.
+\end{equation}
+El potencial transformado resulta ser:
+\begin{equation}
+V_1(x) = V_0(x) - 2W'(x)
+\end{equation}
+En lugar de usar solo una función semilla, ahora usamos un conjunto de kkk soluciones linealmente independientes de la ecuación de Schrödinger para \( H_0 \):
+\begin{equation}
+H_0 \psi_i = E_i \psi_i, \quad i = 1, 2, \dots, k.
+\end{equation}
+A partir de estas funciones, se construye el wronskiano:
+\begin{equation}
+W(\psi_1, \psi_2, \dots, \psi_k) =
+\begin{vmatrix}
+\psi_1 & \psi_2 & \dots & \psi_k \\
+\psi_1' & \psi_2' & \dots & \psi_k' \\
+\vdots & \vdots & \ddots & \vdots \\
+\psi_1^{(k-1)} & \psi_2^{(k-1)} & \dots & \psi_k^{(k-1)}
+\end{vmatrix}
+\end{equation}
+El nuevo potencial transformado se obtiene mediante:
+\begin{equation}
+V_k(x) = V_0(x) - 2 \frac{d^2}{dx^2} \ln W(\psi_1, \psi_2, \dots, \psi_k)
+\end{equation}
+La cual cumple con el álgebra propuesto por Witten tiempo atrás.
+\end{document}
