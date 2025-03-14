@@ -9,6 +9,7 @@
 \usepackage{dcolumn}% Align table columns on decimal point
 \usepackage{bm}% bold math
 \usepackage{amsmath, amssymb, amsthm}
+\usepackage{float} 
 
 \begin{document}
 
@@ -105,7 +106,7 @@ El potencial transformado resulta ser:
 \begin{equation}
 V_1(x) = V_0(x) - 2W'(x)
 \end{equation}
-En lugar de usar solo una función semilla, ahora usamos un conjunto de kkk soluciones linealmente independientes de la ecuación de Schrödinger para \( H_0 \):
+En lugar de usar solo una función semilla, ahora usamos un conjunto de k soluciones linealmente independientes de la ecuación de Schrödinger para \( H_0 \):
 \begin{equation}
 H_0 \psi_i = E_i \psi_i, \quad i = 1, 2, \dots, k.
 \end{equation}
@@ -135,26 +136,72 @@ Para simplificar, utilizaremos unidades adimensionales donde \( \hbar = m = \ome
 \begin{equation}
 H_0 = -\frac{1}{2} \frac{d^2}{dx^2} + \frac{1}{2} x^2
 \end{equation}
-De esta forma, la solución de la función de onda para la ecuación Schrödinger, del oscilador armónico, puede ser descrita en términos de polinomios de Hermiteh de la siguiente manera:
+De esta forma, la solución de la función de onda para la ecuación Schrödinger, del oscilador armónico, puede ser descrita en términos de polinomios de Hermite de la siguiente manera:
 \begin{equation}
 \psi_n(x) = H_n(x) e^{-\frac{x^2}{2}}
 \end{equation}
-A partir del Hamiltoniano, se puede conocer el potencial base V0:
+A partir del Hamiltoniano \( H_0 \), se puede conocer el potencial base \( V_0 \):
 \begin{equation}
 V_0=\frac{1}{2} x^2
 \end{equation}
-
-\begin{center}
-    \includegraphics[width=0.6\textwidth]{QuantumHarmonicOscillator.jpeg} 
-\end{center}
-\begin{center}
-    \includegraphics[width=0.6\textwidth]{QuantumHarmonicOscillator_2_3.jpeg} 
-\end{center}
-\begin{center}
-    \includegraphics[width=0.6\textwidth]{QHO_Odd.jpeg} 
-\end{center}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{QuantumHarmonicOscillator.jpeg}
+    \caption{Gráfica de los estados del oscilador armónico y su potencial.}
+    \label{fig:modified_oscillator}
+\end{figure}
+A partir del potencial \( V_0 \) podemos encontrar un nuevo potencial aplicando la siguiente ecuación (transformada de Darboux):
+\begin{equation}
+V_k(x) = V_0(x) - 2 \frac{d^2}{dx^2} \ln(W(\psi_1, \psi_2, ..., \psi_k))
+\end{equation}
+Donde \( \psi_1, \psi_2, \dots, \psi_k \) son los \( k \) estados consecutivos que deseamos eliminar (funciones semillas).
+Para ejemplificar, utilizamos \( \psi_2 \) y \( \psi_3 \) como nuestras funciones semillas:
+\begin{equation}
+V_k(x) = V_0(x) - 2 \frac{d^2}{dx^2} \ln(W(\psi_2, \psi_3))
+\end{equation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{QuantumHarmonicOscillator_blue_2_2.jpeg}
+    \caption{Gráfica del potencial modificado del oscilador armónico con nb=2 y k=2.}
+    \label{fig:modified_oscillator}
+\end{figure}
+También generamos el operador \( B_k \):
+\begin{equation}
+B_k = \frac{W(\psi_1, \psi_2, \dots, \psi_k, \psi_n)}{W(\psi_1, \psi_2, \dots, \psi_k)}
+\end{equation}
+Al aplicar el operador \( B_k \) a cada uno de los estados del oscilador, los estados que definimos como nuestras funciones semillas se vuelven 0:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{QuantumHarmonicOscillator_2_3.jpeg}
+    \caption{Gráfica con los estados eliminados del oscilador armónico y el potencial modificado.}
+    \label{fig:modified_oscillator}
+\end{figure}
 
 \section{Discusión}
+Partiendo de las consideraciones anteriores, cuando se eligen semillas consecutivas 
+\( \psi_n, \psi_{n+1}, \dots, \psi_{n+k-1} \), la forma en que sus ceros reales se “superponen” depende del valor de \( k \). 
+
+Concisamente, para \( k \) par, los ceros de algunas funciones se compensan con la estructura de otras y generan un Wronskiano que no se anula en el eje real, evitando la aparición de ceros comunes. 
+
+Con \( k \) impar, se elimina la compensación mencionada, por lo que el Wronskiano presenta puntos donde se anula, produciendo singularidades (picos) en \( V_k(x) \). 
+
+Para ilustrar estas singularidades, cuando se declara \( k = 3 \) (tres funciones semillas), se obtiene la siguiente gráfica:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{QHO_Odd.jpeg}
+    \caption{Potencial Modificado con k impar.}
+    \label{fig:modified_oscillator}
+\end{figure}
+Podemos visualizar los picos que representan las posiciones donde el Wronksiano se anula y el nuevo potencial se hace infinito, o sea, cuando:
+\begin{equation}
+W(\psi_2, \psi_3, \psi_4)(x)=0
+\end{equation}
+Puesto que considerando nuevamente la transformada de Darboux para el oscilador armónico
+\begin{equation}
+V_k(x) = \frac{1}{2} x^2 - 2 \frac{d^2}{dx^2} \ln \left( W(\psi_2, \psi_3, \psi_4) \right)
+\end{equation}
+En esos puntos, \( \ln(W(\dots)) \) diverge y la segunda derivada se hace infinita.
 
 \section{Conclusiones}
 
@@ -165,7 +212,22 @@ V_0=\frac{1}{2} x^2
 
 \section{Agradecimientos}
 
+Queremos expresar nuestro más sincero agradecimiento a nuestros profesores, quienes han sido fundamentales en nuestra formación académica y en el desarrollo de este trabajo.
+
+A la Dra. Zurika Iveth Blanco García, por su paciencia y dedicación en la enseñanza del álgebra cuántica y Mathematica.
+
+Al Dr. Mario Iván Estrada Delgado, por proporcionarnos artículos y recursos de gran utilidad, así como por plantearnos ejercicios desafiantes que fortalecieron nuestras habilidades en la resolución de problemas avanzados.
+
+Al Dr. Fernando Olivar Romero, por sentar las bases de nuestra comprensión en mecánica cuántica.
+
+\begin{flushright}
+\textit{Con gratitud,\\[0.2cm] El equipo de trabajo.}
+\end{flushright}
+
 \section{Apéndices}
+
+\end{document}
+
 
 \end{document}
 
