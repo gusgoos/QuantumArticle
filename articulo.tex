@@ -65,13 +65,13 @@ El Hamiltoniano supersimétrico toma la forma:
 H_{ss} = \{Q^-, Q^+\} = \begin{pmatrix} B_k^+ B_k^- & 0 \\ 0 & B_k^- B_k^+ \end{pmatrix}.
 \end{equation}
 \subsection{Entrelazamiento operatorial y SUSY QM}
-El método de entrelazamiento operatorial, desarrollado posteriormente, proporciona una herramienta poderosa para construir sistemas supersimétricos. Este método se basa en la idea de entrelazar dos Hamiltonianos \( H_1 \) y \( H_2 \) a través de un operador \( A \):
+El método de entrelazamiento operatorial, desarrollado posteriormente, proporciona una herramienta poderosa para construir sistemas supersimétricos. Este método se basa en la idea de entrelazar dos Hamiltonianos \( H_0 \) y \( H_1 \) a través de un operador \( A \):
 \begin{equation}
 H_1 = A H_0 A^{-1}
 \end{equation}
 En el contexto de SUSY QM, el operador de entrelazamiento A se relaciona directamente con los operadores supercargas Q y Q†. Específicamente, A puede construirse a partir de una combinación lineal de estos operadores. Esto permite generar pares de Hamiltonianos supersimétricos de manera sistemática, facilitando el estudio de sus propiedades y la exploración de la ruptura de la supersimetría.
 \subsection{Superpotencial y la ecuación de Riccati}
-El método de entrelazamiento operatorial está íntimamente ligado al concepto de superpotencial \( W(x) \) en SUSY QM. Este superpotencial es una función que determina completamente los Hamiltonianos \( H_1 \) y \( H_2 \) del sistema supersimétrico. 
+El método de entrelazamiento operatorial está íntimamente ligado al concepto de superpotencial \( W(x) \) en SUSY QM. Este superpotencial es una función que determina completamente los Hamiltonianos \( H_0 \) y \( H_1 \) del sistema supersimétrico. 
 El superpotencial \( W(x) \) encapsula la información esencial que define la estructura del sistema supersimétrico, y a partir de él se construyen los Hamiltonianos \( H_0 \) y \( H_1 \).
 Dado un Hamiltoniano base unidimensional:
 \begin{equation}
@@ -195,13 +195,13 @@ Para ilustrar estas singularidades, cuando se declara \( k = 3 \) (tres funcione
 \end{figure}
 Podemos visualizar los picos que representan las posiciones donde el Wronksiano se anula y el nuevo potencial se hace infinito, o sea, cuando:
 \begin{equation}
-W(\psi_2, \psi_3, \psi_4)(x)=0
+W(\psi_8, \psi_9, \psi_{10})(x)=0
 \end{equation}
-Puesto que considerando nuevamente la transformada de Darboux para el oscilador armónico
+Puesto que considerando nuevamente la transformada de Darboux para el oscilador armónico:
 \begin{equation}
-V_k(x) = \frac{1}{2} x^2 - 2 \frac{d^2}{dx^2} \ln \left( W(\psi_2, \psi_3, \psi_4) \right)
+V_k(x) = \frac{1}{2} x^2 - 2 \frac{d^2}{dx^2} \ln \left( W(\psi_8, \psi_9, \psi_{10}) \right),
 \end{equation}
-En esos puntos, \( \ln(W(\dots)) \) diverge y la segunda derivada se hace infinita.
+en esos puntos, \( \ln(W(\dots)) \) diverge y la segunda derivada se hace infinita.
 
 \section{Conclusiones}
 Este trabajo ha demostrado cómo la mecánica cuántica supersimétrica (SUSY QM) y la factorización de Hamiltonianos permiten modificar y controlar la estructura espectral de sistemas cuánticos, destacando su aplicación en la generación de potenciales isoespectrales y la eliminación de estados en el oscilador armónico. La conexión con la ecuación de Riccati y el uso del wronskiano en transformaciones de Darboux han sido clave para comprender la construcción de nuevos potenciales, identificando cómo la elección de funciones semilla puede generar o evitar singularidades en el sistema. A futuro, este enfoque puede extenderse a sistemas en más dimensiones, aplicarse en la teoría de bandas en materiales cuánticos, explorarse en el contexto de ecuaciones no lineales y analizarse en experimentos con trampas de iones o condensados de Bose-Einstein. En definitiva, el formalismo de SUSY QM se presenta como una herramienta versátil con un gran potencial de aplicación en diversas áreas de la física teórica y aplicada.
